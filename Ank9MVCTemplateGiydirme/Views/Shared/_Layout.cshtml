@@ -21,7 +21,7 @@
 
 
     <link rel="stylesheet" href="~/css/flaticon.css">
-    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
     <div class="wrap">
@@ -45,29 +45,36 @@
         </div>
     </div>
 
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Taste.<span>it</span></a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Taste.<span>it</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
-           
+            @{
+                string actionName = Context.Request.RouteValues["action"].ToString();
+                string controllerName = Context.Request.RouteValues["controller"].ToString();
+            }
+
+
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item "><a asp-action="Index" asp-controller="Home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a asp-action="" asp-controller="" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="chef.html" class="nav-link">Chef</a></li>
+                    @*<li class="nav-item @((actionName == "Index" && controllerName == "Home") ? "active" : "")"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item @((actionName == "Privacy" && controllerName == "Home") ? "active" : "")"><a class="nav-link" asp-controller="Home" asp-action="Privacy">About</a></li>*@
+                    <li class="nav-item"><a asp-action="Index" asp-controller="Home"  class="nav-link">Home</a></li>
+                    <li class="nav-item"><a asp-action="About" asp-controller="Home"  class="nav-link">About</a></li>
+                    <li class="nav-item"><a  class="nav-link">Chef</a></li>
                     <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
                     <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a asp-action="Contact" asp-controller="Home" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
-
     @RenderBody()
 
     <section class="ftco-section ftco-intro" style="background-image: url('../../images/bg_3.jpg'); ">
@@ -290,6 +297,11 @@
     <script src="~/js/jquery.timepicker.min.js"></script>
     <script src="~/js/scrollax.min.js"></script>
     <script src="~/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="~/js/google-map.js"></script>
+    <script src="~/js/main.js"></script>
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
