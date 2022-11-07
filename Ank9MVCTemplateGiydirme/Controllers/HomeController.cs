@@ -32,5 +32,11 @@ namespace Ank9MVCTemplateGiydirme.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //1. Chef sayfası ilgili kodları VSCODE üzerinden bulup view a entegre ediniz.(AYRI CONTROLLER AÇILACAK.)
+        //2.DB CONNECTİON
+        //3.SINIFLAR VE PROPS.
+
+        
+
     }
 }
