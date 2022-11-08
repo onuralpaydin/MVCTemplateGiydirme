@@ -6,9 +6,12 @@ namespace Ank9MVCTemplateGiydirme.Models
 	{
 		[ForeignKey("Malzeme")]
 		public int MalzemeId { get; set; }
+
 		public Malzeme Malzeme { get; set; }
+
 		[ForeignKey("Urun")]
 		public int UrunId { get; set; }
+
 		public Urun Urun { get; set; }
 	}
 }

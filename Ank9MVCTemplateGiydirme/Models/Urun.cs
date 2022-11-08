@@ -21,5 +21,5 @@ namespace Ank9MVCTemplateGiydirme.Models
         public int KategoriId{ get; set; }
         public Kategori Kategori{ get; set; }
 		public List<UrunMalzeme>UrunlerMalzemeler  { get; set; }
-	}
+    }
 }
