@@ -10,7 +10,7 @@ namespace Ank9MVCTemplateGiydirme.Models
 
         [Required]
         public string MalzemeAdi { get; set; }
-		public List<UrunMalzeme> UrunMalzemeler { get; set; }
+		public List<UrunMalzeme>? UrunMalzemeler { get; set; }
 
 	}
 }
