@@ -4,8 +4,10 @@
 
 namespace Ank9MVCTemplateGiydirme.Migrations
 {
-    public partial class DbFormation : Migration
+    /// <inheritdoc />
+    public partial class init : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -14,7 +16,7 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                 {
                     KategoriId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KategoriAdi = table.Column<int>(type: "int", nullable: false)
+                    KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,6 +113,7 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                 column: "MalzemeId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

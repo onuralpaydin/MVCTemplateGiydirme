@@ -16,10 +16,10 @@ namespace Ank9MVCTemplateGiydirme.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Ank9MVCTemplateGiydirme.Models.Kategori", b =>
                 {
@@ -27,10 +27,11 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KategoriId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KategoriId"));
 
-                    b.Property<int>("KategoriAdi")
-                        .HasColumnType("int");
+                    b.Property<string>("KategoriAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("KategoriId");
 
@@ -43,7 +44,7 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KullaniciId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KullaniciId"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -72,7 +73,7 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MalzemeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MalzemeId"));
 
                     b.Property<string>("MalzemeAdi")
                         .IsRequired()
@@ -89,7 +90,7 @@ namespace Ank9MVCTemplateGiydirme.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UrunId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UrunId"));
 
                     b.Property<int>("KategoriId")
                         .HasColumnType("int");

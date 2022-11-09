@@ -8,7 +8,7 @@ namespace Ank9MVCTemplateGiydirme.Models
 		[Required]
 		public int KategoriId { get; set; }
 		[Required]
-		public int KategoriAdi { get; set; }
-		public List<Urun> Urunler { get; set; }
+		public string KategoriAdi { get; set; }
+		public List<Urun>? Urunler { get; set; }
 	}
 }
