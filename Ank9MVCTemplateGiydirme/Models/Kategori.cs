@@ -4,6 +4,7 @@ namespace Ank9MVCTemplateGiydirme.Models
 {
 	public class Kategori
 	{
+		
 		[Key]
 		[Required]
 		public int KategoriId { get; set; }
