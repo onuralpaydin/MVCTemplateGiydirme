@@ -15,11 +15,11 @@ namespace Ank9MVCTemplateGiydirme.Models
         [Required]
         [Column(TypeName="decimal(18,2)")]
         public decimal UrunFiyat { get; set; }
-        public string UrunResimURL { get; set; }
+        public string? UrunResimURL { get; set; }
         [Required]
         [ForeignKey("Kategori")]
         public int KategoriId{ get; set; }
         public Kategori Kategori{ get; set; }
-		public List<UrunMalzeme>UrunlerMalzemeler  { get; set; }
+		public List<UrunMalzeme>?UrunlerMalzemeler  { get; set; }
     }
 }
