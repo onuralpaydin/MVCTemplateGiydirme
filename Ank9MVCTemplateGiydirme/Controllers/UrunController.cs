@@ -97,6 +97,7 @@ namespace Ank9MVCTemplateGiydirme.Controllers
                 }
 
             }
+           
         }
 
     }
